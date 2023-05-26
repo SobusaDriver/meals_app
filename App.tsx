@@ -41,8 +41,8 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Tab.Navigator initialRouteName='HomeScreen'>
-        <Tab.Screen name='HomeScreen' component={HomeScreen}/>
-        <Tab.Screen name='Locations' component={LocationScreen}/>
+        <Tab.Screen name='HomeScreen' component={HomeScreen} options={{headerShown: false }}/>
+        <Tab.Screen name='Locations' component={LocationScreen} options={{headerShown: false}}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
