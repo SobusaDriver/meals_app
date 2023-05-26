@@ -7,7 +7,6 @@ import ListOfCards from '../Components/ListOfCards';
 
 const HomeScreen = () => {
   const listOfRestaurants: Array<BusinessType> = Antwerp.results;
-  console.log(listOfRestaurants[0]);
 
   return (
     <View>
@@ -17,5 +16,3 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({});
