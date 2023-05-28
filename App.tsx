@@ -27,6 +27,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './app/Screens/HomeScreen';
 import RestaurantsScreen from './app/Screens/RestaurantsScreen';
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/MaterialIcons'
 
 const Tab = createBottomTabNavigator();
 
@@ -40,8 +42,8 @@ function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Tab.Navigator initialRouteName='Home'>
-        <Tab.Screen name='Home' component={HomeScreen} options={{headerShown: false }}/>
-        <Tab.Screen name='Restaurants' component={RestaurantsScreen} options={{headerShown: false}}/>
+        <Tab.Screen name='Home' component={HomeScreen} options={{headerShown: false, tabBarIcon: ({color, size}) => <Icon name="home" color={color} size={size}/> }}/>
+        <Tab.Screen name='Restaurants' component={RestaurantsScreen} options={{headerShown: false, tabBarIcon: ({color, size}) => <Icon name="restaurant" color={color} size={size} />}}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
