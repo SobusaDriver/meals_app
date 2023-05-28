@@ -26,7 +26,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './app/Screens/HomeScreen';
-import LocationScreen from './app/Screens/LocationScreen';
+import RestaurantsScreen from './app/Screens/RestaurantsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -39,9 +39,9 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='HomeScreen'>
-        <Tab.Screen name='HomeScreen' component={HomeScreen} options={{headerShown: false }}/>
-        <Tab.Screen name='Locations' component={LocationScreen} options={{headerShown: false}}/>
+      <Tab.Navigator initialRouteName='Home'>
+        <Tab.Screen name='Home' component={HomeScreen} options={{headerShown: false }}/>
+        <Tab.Screen name='Restaurants' component={RestaurantsScreen} options={{headerShown: false}}/>
       </Tab.Navigator>
     </NavigationContainer>
   );

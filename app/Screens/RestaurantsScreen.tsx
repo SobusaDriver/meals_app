@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const LocationScreen = () => {
+const RestaurantsScreen = () => {
   return (
     <View>
       <Text>LocationScreen</Text>
@@ -9,6 +9,6 @@ const LocationScreen = () => {
   )
 }
 
-export default LocationScreen
+export default RestaurantsScreen
 
 const styles = StyleSheet.create({})
