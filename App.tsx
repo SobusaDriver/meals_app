@@ -4,7 +4,7 @@
  *
  * @format
  */
-
+import {enableLatestRenderer} from 'react-native-maps';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
@@ -25,12 +25,13 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import HomeScreen from './app/Screens/HomeScreen';
-import RestaurantsScreen from './app/Screens/RestaurantsScreen';
+import ScreenHome from './app/Screens/ScreenHome';
+import ScreenRestaurants from './app/Screens/ScreenRestautants';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import HotelsScreen from './app/Screens/HotelsScreen';
+import ScreenHotels from './app/Screens/ScreenHotels';
 
+enableLatestRenderer();
 const Tab = createBottomTabNavigator();
 
 function App(): JSX.Element {
@@ -45,7 +46,7 @@ function App(): JSX.Element {
       <Tab.Navigator initialRouteName="Home">
         <Tab.Screen
           name="Home"
-          component={HomeScreen}
+          component={ScreenHome}
           options={{
             headerShown: false,
             tabBarIcon: ({color, size}) => (
@@ -55,7 +56,7 @@ function App(): JSX.Element {
         />
         <Tab.Screen
           name="Restaurants"
-          component={RestaurantsScreen}
+          component={ScreenRestaurants}
           options={{
             headerShown: false,
             tabBarIcon: ({color, size}) => (
@@ -65,7 +66,7 @@ function App(): JSX.Element {
         />
         <Tab.Screen
           name="Hotels"
-          component={HotelsScreen}
+          component={ScreenHotels}
           options={{
             headerShown: false,
             tabBarIcon: ({color, size}) => (

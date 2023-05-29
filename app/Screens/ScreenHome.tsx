@@ -10,7 +10,7 @@ import ListOfCards from '../Components/ListOfCards';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import { listOfBusiness } from '../Utils/BusinessUtils';
 
-const HomeScreen = () => {
+const ScreenHome = () => {
   const insets = useSafeAreaInsets();
   const listOfRestaurants: Array<BusinessType> = listOfBusiness;
 
@@ -26,4 +26,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default ScreenHome;

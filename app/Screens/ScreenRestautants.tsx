@@ -5,9 +5,9 @@ import BusinessType from '../Types/BusinessType';
 import {getBusinessByType, listOfBusiness} from '../Utils/BusinessUtils';
 import ListOfCards from '../Components/ListOfCards';
 
-const HotelsScreen = () => {
+const ScreenRestaurants = () => {
   const insets = useSafeAreaInsets();
-  let listOfBusiness: Array<BusinessType> = getBusinessByType('lodging');
+  let listOfBusiness: Array<BusinessType> = getBusinessByType('restaurant');
   useEffect(() => {}, []);
 
   return (
@@ -22,4 +22,6 @@ const HotelsScreen = () => {
   );
 };
 
-export default HotelsScreen;
+export default ScreenRestaurants;
+
+const styles = StyleSheet.create({});

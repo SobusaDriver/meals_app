@@ -1,6 +1,7 @@
 import {Card, Text, Avatar, Button} from 'react-native-paper';
 import {Image, StyleSheet, View} from 'react-native';
 import CardContent from 'react-native-paper/lib/typescript/src/components/Card/CardContent';
+import LocationDetails from '../Types/LocationDetails';
 
 type cardProps = {
   title: string;
@@ -8,7 +9,7 @@ type cardProps = {
   iconSrc: string;
   userRating?: number;
   userRatingsTotal?: number;
-  detailsRoute: string;
+  locationDetails: LocationDetails;
 };
 
 const MaterialCard = ({
@@ -17,7 +18,7 @@ const MaterialCard = ({
   iconSrc,
   userRating,
   userRatingsTotal,
-  detailsRoute,
+  locationDetails: detailsRoute,
 }: cardProps) => {
   return (
     <Card mode="contained" style={style.cardContainer}>

@@ -19,7 +19,7 @@ const ListOfCards = ({restaurants}: lofProps) => {
           iconSrc={item.icon}
           userRating={item.rating}
           userRatingsTotal={item.user_ratings_total}
-          detailsRoute=""
+          locationDetails={item.geometry}
         />
       )}
     />
