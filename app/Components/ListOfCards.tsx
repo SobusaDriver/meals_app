@@ -17,6 +17,7 @@ const ListOfCards = ({restaurants}: lofProps) => {
           title={item.name}
           subTitle={item.vicinity}
           iconSrc={item.icon}
+          userRating={item.rating}
           userRatingsTotal={item.user_ratings_total}
           detailsRoute=""
         />

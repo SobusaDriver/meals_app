@@ -1,6 +1,8 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+// Google Maps service
+#import <GoogleMaps/GoogleMaps.h>
 
 @implementation AppDelegate
 
@@ -9,6 +11,7 @@
   self.moduleName = @"meals_app";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
+  [GMSServices provideAPIKey:@"AIzaSyCiLuY4PSSMbgDVlUa6L4XhWgMXvAFeJM8"];
   self.initialProps = @{};
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];

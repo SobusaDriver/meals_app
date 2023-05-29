@@ -29,6 +29,7 @@ import HomeScreen from './app/Screens/HomeScreen';
 import RestaurantsScreen from './app/Screens/RestaurantsScreen';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
+import HotelsScreen from './app/Screens/HotelsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -64,7 +65,7 @@ function App(): JSX.Element {
         />
         <Tab.Screen
           name="Hotels"
-          component={RestaurantsScreen}
+          component={HotelsScreen}
           options={{
             headerShown: false,
             tabBarIcon: ({color, size}) => (

@@ -6,6 +6,7 @@ type cardProps = {
   title: string;
   subTitle: String;
   iconSrc: string;
+  userRating?: number;
   userRatingsTotal?: number;
   detailsRoute: string;
 };
@@ -14,12 +15,13 @@ const MaterialCard = ({
   title,
   subTitle,
   iconSrc,
+  userRating,
   userRatingsTotal,
   detailsRoute,
 }: cardProps) => {
   return (
     <Card mode="contained" style={style.cardContainer}>
-      <Card.Title title={title} />
+      <Card.Title titleVariant="headlineSmall" title={title} />
       <Card.Content style={style.CardContent}>
         {/* <Card.Cover source={ {uri: iconSrc}}/> */}
         <Avatar.Image
@@ -30,7 +32,12 @@ const MaterialCard = ({
         <Image style={style.cardImage} source={{uri: iconSrc}} />
         <View>
           <Text variant="bodyMedium">{subTitle}</Text>
-          <Text variant="bodyMedium">Total Rating: {userRatingsTotal}</Text>
+          {userRating && (
+            <Text variant="bodyMedium">User Rating: {userRating}★</Text>
+          )}
+          {userRatingsTotal && (
+            <Text variant="bodyMedium">Total Rating: {userRatingsTotal}</Text>
+          )}
         </View>
       </Card.Content>
     </Card>
