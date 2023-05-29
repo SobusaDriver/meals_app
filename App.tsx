@@ -5,8 +5,8 @@
  * @format
  */
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import {
   SafeAreaView,
@@ -28,7 +28,7 @@ import {
 import HomeScreen from './app/Screens/HomeScreen';
 import RestaurantsScreen from './app/Screens/RestaurantsScreen';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,9 +41,37 @@ function App(): JSX.Element {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='Home'>
-        <Tab.Screen name='Home' component={HomeScreen} options={{headerShown: false, tabBarIcon: ({color, size}) => <Icon name="home" color={color} size={size}/> }}/>
-        <Tab.Screen name='Restaurants' component={RestaurantsScreen} options={{headerShown: false, tabBarIcon: ({color, size}) => <Icon name="restaurant" color={color} size={size} />}}/>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({color, size}) => (
+              <Icon name="home" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Restaurants"
+          component={RestaurantsScreen}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({color, size}) => (
+              <Icon name="restaurant" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Hotels"
+          component={RestaurantsScreen}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({color, size}) => (
+              <Icon name="hotel" color={color} size={size} />
+            ),
+          }}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );
