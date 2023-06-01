@@ -10,6 +10,7 @@ type cardProps = {
   userRating?: number;
   userRatingsTotal?: number;
   locationDetails: LocationDetails;
+  navigateToRoute: () => void;
 };
 
 const MaterialCard = ({
@@ -18,19 +19,17 @@ const MaterialCard = ({
   iconSrc,
   userRating,
   userRatingsTotal,
-  locationDetails: detailsRoute,
+  navigateToRoute,
 }: cardProps) => {
   return (
     <Card mode="contained" style={style.cardContainer}>
       <Card.Title titleVariant="headlineSmall" title={title} />
       <Card.Content style={style.CardContent}>
-        {/* <Card.Cover source={ {uri: iconSrc}}/> */}
         <Avatar.Image
           style={style.cardImage}
           size={56}
           source={{uri: iconSrc}}
         />
-        <Image style={style.cardImage} source={{uri: iconSrc}} />
         <View>
           <Text variant="bodyMedium">{subTitle}</Text>
           {userRating && (
@@ -39,6 +38,7 @@ const MaterialCard = ({
           {userRatingsTotal && (
             <Text variant="bodyMedium">Total Rating: {userRatingsTotal}</Text>
           )}
+          <Button onPress={() => navigateToRoute()}>See Location</Button>
         </View>
       </Card.Content>
     </Card>

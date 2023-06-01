@@ -30,6 +30,7 @@ import ScreenRestaurants from './app/Screens/ScreenRestautants';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScreenHotels from './app/Screens/ScreenHotels';
+import NestedNavigator from './app/Components/NestedNavigator';
 
 enableLatestRenderer();
 const Tab = createBottomTabNavigator();
@@ -46,7 +47,7 @@ function App(): JSX.Element {
       <Tab.Navigator initialRouteName="Home">
         <Tab.Screen
           name="Home"
-          component={ScreenHome}
+          component={NestedNavigator}
           options={{
             headerShown: false,
             tabBarIcon: ({color, size}) => (

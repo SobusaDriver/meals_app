@@ -1,34 +1,36 @@
-import {View, Text, StyleSheet} from 'react-native';
-import React from 'react';
+import {View, Text, StyleSheet, Dimensions} from 'react-native';
+import React, {useState} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import MapView from 'react-native-maps';
-import LocationDetails from '../Types/LocationDetails';
+import MapView, {Marker} from 'react-native-maps';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import NestedNavigatorParams from '../Types/NestedNavigatorParams';
 
 type screenMapsProps = NativeStackScreenProps<
   NestedNavigatorParams,
-  'Location'
+  'LocationNested'
 >;
 const ScreenMaps = ({route}: screenMapsProps) => {
   const insets = useSafeAreaInsets();
   const {locationDetails} = route.params;
+  const location = {
+    latitude: locationDetails.location.lat,
+    longitude: locationDetails.location.lng,
+    latitudeDelta:
+      locationDetails.viewport.northeast.lat -
+      locationDetails.viewport.southwest.lat,
+    longitudeDelta:
+      locationDetails.viewport.northeast.lng -
+      locationDetails.viewport.southwest.lng,
+  };
   return (
     <View
       style={{
-        paddingTop: insets.top,
         paddingHorizontal: insets.right,
+        flex: 1,
       }}>
-      <Text>Place Location</Text>
-      <MapView
-        style={styles.mapView}
-        region={{
-          latitude: locationDetails.location.lat,
-          longitude: locationDetails.location.lat,
-          latitudeDelta: locationDetails.viewport.northeast.lat,
-          longitudeDelta: locationDetails.viewport.northeast.lng,
-        }}
-      />
+      <MapView style={styles.mapView} region={location}>
+        <Marker coordinate={location} />
+      </MapView>
     </View>
   );
 };

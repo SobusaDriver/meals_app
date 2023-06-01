@@ -1,7 +1,15 @@
 import LocationDetails from './LocationDetails';
 
+type pageProps = {
+  title: string;
+  page: React.FC;
+};
+
 type NestedNavigatorParams = {
-  Home: undefined;
-  Location: {locationDetails: LocationDetails};
+  HomeNested: undefined;
+  HotelNested: undefined;
+  RestaurantNested: undefined;
+  LocationNested: {locationDetails: LocationDetails};
+  NestedNavigator: pageProps;
 };
 export default NestedNavigatorParams;

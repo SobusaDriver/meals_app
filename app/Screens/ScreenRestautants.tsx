@@ -4,11 +4,22 @@ import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import BusinessType from '../Types/BusinessType';
 import {getBusinessByType, listOfBusiness} from '../Utils/BusinessUtils';
 import ListOfCards from '../Components/ListOfCards';
+import LocationDetails from '../Types/LocationDetails';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import NestedNavigatorParams from '../Types/NestedNavigatorParams';
 
-const ScreenRestaurants = () => {
+type screenRestaurantsProps = NativeStackScreenProps<
+  NestedNavigatorParams,
+  'RestaurantNested'
+>;
+
+const ScreenRestaurants = ({route, navigation}: screenRestaurantsProps) => {
   const insets = useSafeAreaInsets();
   let listOfBusiness: Array<BusinessType> = getBusinessByType('restaurant');
-  useEffect(() => {}, []);
+
+  const navigateToRoute = (locationDetails: LocationDetails) => {
+    navigation.navigate('LocationNested', {locationDetails: locationDetails});
+  };
 
   return (
     <View
@@ -17,7 +28,10 @@ const ScreenRestaurants = () => {
         paddingLeft: insets.left,
         paddingRight: insets.right,
       }}>
-      <ListOfCards restaurants={listOfBusiness} />
+      <ListOfCards
+        restaurants={listOfBusiness}
+        navigateToRoute={navigateToRoute}
+      />
     </View>
   );
 };
