@@ -13,7 +13,7 @@ type NestedNavigatorProps = NativeStackScreenProps<
   'NavigatorNested'
 >;
 
-const NestedNavigatorBeta = ({navigation, route}: NestedNavigatorProps) => {
+const NestedNavigatorBeta = ({route}: NestedNavigatorProps) => {
   const {pageProps} = route.params;
   return (
     <Stack.Navigator initialRouteName={pageProps.title}>

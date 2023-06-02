@@ -12,9 +12,11 @@ import {useColorScheme} from 'react-native';
 import ScreenRestaurants from './app/Screens/ScreenRestautants';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import ScreenHotels from './app/Screens/ScreenHotels';
-import NestedNavigator from './app/ScreenNavigators/NestedNavigator';
+import Nestedhome from './app/ScreenNavigators/NestedHome';
 import NestedNavigatorBeta from './app/ScreenNavigators/NestedNavigatorBeta';
 import {listOfNestedPages} from './app/NavigatorsParamsTypes/NestedPagesProps';
+import NestedRestaurant from './app/ScreenNavigators/NestedRestaurant';
+import NestedHotel from './app/ScreenNavigators/NestedHotel';
 
 enableLatestRenderer();
 const Tab = createBottomTabNavigator();
@@ -25,7 +27,7 @@ function App(): JSX.Element {
       <Tab.Navigator initialRouteName="Home">
         <Tab.Screen
           name="Home"
-          component={NestedNavigator}
+          component={Nestedhome}
           options={{
             headerShown: false,
             tabBarIcon: ({color, size}) => (
@@ -34,19 +36,22 @@ function App(): JSX.Element {
           }}
         />
         <Tab.Screen
-          name="NavigatorNested"
-          component={NestedNavigatorBeta}
-          initialParams={{
-            pageProps: {
-              title: listOfNestedPages.RestaurantNested,
-              headerText: 'Restaurant',
-              page: ScreenRestaurants,
-            },
-          }}
+          name="Restaurant"
+          component={NestedRestaurant}
           options={{
             headerShown: false,
             tabBarIcon: ({color, size}) => (
               <Icon name="restaurant" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name="Hotel"
+          component={NestedHotel}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({color, size}) => (
+              <Icon name="hotel" color={color} size={size} />
             ),
           }}
         />
@@ -83,16 +88,6 @@ function App(): JSX.Element {
             page={ScreenRestaurants}
           />
         </Tab.Screen> */}
-        <Tab.Screen
-          name="Hotels"
-          component={ScreenHotels}
-          options={{
-            headerShown: false,
-            tabBarIcon: ({color, size}) => (
-              <Icon name="hotel" color={color} size={size} />
-            ),
-          }}
-        />
       </Tab.Navigator>
     </NavigationContainer>
   );
