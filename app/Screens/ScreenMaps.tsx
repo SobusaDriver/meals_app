@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import MapView, {Marker} from 'react-native-maps';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import NestedNavigatorParams from '../Types/NestedNavigatorParams';
+import NestedNavigatorParams from '../NavigatorsParamsTypes/NestedNavigatorParams';
 
 type screenMapsProps = NativeStackScreenProps<
   NestedNavigatorParams,

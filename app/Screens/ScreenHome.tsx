@@ -5,7 +5,7 @@ import ListOfCards from '../Components/ListOfCards';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {listOfBusiness} from '../Utils/BusinessUtils';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import NestedNavigatorParams from '../Types/NestedNavigatorParams';
+import NestedNavigatorParams from '../NavigatorsParamsTypes/NestedNavigatorParams';
 import LocationDetails from '../Types/LocationDetails';
 
 type screenHomeProps = NativeStackScreenProps<

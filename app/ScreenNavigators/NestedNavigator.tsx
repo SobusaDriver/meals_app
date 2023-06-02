@@ -1,16 +1,12 @@
-import {View, Text} from 'react-native';
 import React from 'react';
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {createStackNavigator} from '@react-navigation/stack';
 import ScreenHome from '../Screens/ScreenHome';
 import ScreenMaps from '../Screens/ScreenMaps';
-import NestedNavigatorParams from '../Types/NestedNavigatorParams';
+import NestedNavigatorParams from '../NavigatorsParamsTypes/NestedNavigatorParams';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 
 const Stack = createStackNavigator<NestedNavigatorParams>();
-type nestedNavigatorParams = NativeStackScreenProps<
-  NestedNavigatorParams,
-  'NestedNavigator'
->;
+
 const NestedNavigator = () => {
   return (
     <Stack.Navigator>

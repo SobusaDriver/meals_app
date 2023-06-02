@@ -1,12 +1,12 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import BusinessType from '../Types/BusinessType';
-import {getBusinessByType, listOfBusiness} from '../Utils/BusinessUtils';
+import {getBusinessByType} from '../Utils/BusinessUtils';
 import ListOfCards from '../Components/ListOfCards';
 import LocationDetails from '../Types/LocationDetails';
 import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import NestedNavigatorParams from '../Types/NestedNavigatorParams';
+import NestedNavigatorParams from '../NavigatorsParamsTypes/NestedNavigatorParams';
 
 type screenRestaurantsProps = NativeStackScreenProps<
   NestedNavigatorParams,
